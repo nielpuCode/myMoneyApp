@@ -13,6 +13,7 @@ function Editpage() {
     const [itemName, setItemName] = useState('');
     const [itemPrice, setItemPrice] = useState('');
     const [items, setItems] = useState([]);
+    const [deleteCounter, setDeleteCounter] = useState(0);
 
     // this useState is for data that is new added. This is the solution for adding the same data over and over again.
     const [newItems, setnewItems] = useState([]);
@@ -49,6 +50,7 @@ function Editpage() {
             setnewItems([...newItems, newItem]);
             setItemName('');
             setItemPrice('');
+            setDeleteCounter(deleteCounter + 1);
         } catch (error) {
             console.log(error);
             alert('Failed to generate ID. Please try again.');
@@ -70,7 +72,7 @@ function Editpage() {
                 Alert.alert('Failed to delete collection', 'Please try again later.');
             }
             return;
-        }else if(newItems.length === 0){
+        }else if(newItems.length === 0 && deleteCounter === 0){
             Alert.alert('No Changes', 'Will return to List Page.', [
                 { text: 'OK', onPress: () => navigation.navigate('Listpage') }
             ]);
@@ -116,6 +118,7 @@ function Editpage() {
                     console.error('Gagal menghapus dokumen:', error);
                 });
               });
+              setDeleteCounter(deleteCounter + 1);
             } else {
               console.log('Dokumen tidak ditemukan.');
             }

@@ -151,31 +151,31 @@ function Firstpage() {
                     {collectionNames.map((name) => (
                         <View style={styles.container} key={name}>
                             <TouchableOpacity style={styles.ViewList} onPress={() => handlePress(name)}>
-                            <Text style={styles.TitleDate}>{name}</Text>
+                                <Text style={styles.TitleDate}>{name}</Text>
 
-                            <View style={{ flexDirection: 'row' }}>
-                            <Text style={{ fontSize: 15, fontWeight: 'bold', marginRight: 10 }}>{getDayOfWeek(name)}</Text>
+                                <View style={{ flexDirection: 'row' }}>
+                                    <Text style={{ fontSize: 15, fontWeight: 'bold', marginRight: 10 }}>{getDayOfWeek(name)}</Text>
+                                </View>
+                            </TouchableOpacity>
+
+                            <View style={styles.ActionDate}>
+                                <TouchableOpacity onPress={() => handleEditItem(name)}>
+                                    <FontAwesome name="pencil" style={styles.ActionText} />
+                                </TouchableOpacity>
+
+                                <TouchableOpacity
+                                onPress={() =>
+                                    Alert.alert(
+                                    'Delete Confirmation',
+                                    'Are you sure want to delete this?',
+                                    [
+                                        {text: 'Cancel', style: 'cancel'},
+                                        {text: 'Delete', onPress: () => handleDelete(name)},
+                                    ]
+                                )}>
+                                    <FontAwesome name="trash" style={styles.ActionText} />
+                                </TouchableOpacity>
                             </View>
-                        </TouchableOpacity>
-
-                        <View style={styles.ActionDate}>
-                            <TouchableOpacity onPress={() => handleEditItem(name)}>
-                                <FontAwesome name="pencil" style={styles.ActionText} />
-                            </TouchableOpacity>
-
-                            <TouchableOpacity
-                            onPress={() =>
-                                Alert.alert(
-                                'Delete Confirmation',
-                                'Are you sure want to delete this?',
-                                [
-                                    {text: 'Cancel', style: 'cancel'},
-                                    {text: 'Delete', onPress: () => handleDelete(name)},
-                                ]
-                            )}>
-                                <FontAwesome name="trash" style={styles.ActionText} />
-                            </TouchableOpacity>
-                        </View>
                         </View>
                     ))}
                 </ScrollView>
