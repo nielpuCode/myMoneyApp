@@ -144,7 +144,7 @@ function Firstpage() {
 
             {isLoading ? (
                 <View style={styles.loadingContainer}>
-                    <ActivityIndicator size="large" color="#ffbb00" style={{ fontWeight: 'bold', marginTop: 100 }} />
+                    <ActivityIndicator size="large" color="#ffbb00" style={{ fontWeight: 'bold', marginTop: 150 }} />
                 </View>
             ) : (
                 <ScrollView style={styles.listExpense}>
