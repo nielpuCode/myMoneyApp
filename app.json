@@ -1,13 +1,13 @@
 {
   "expo": {
-    "name": "myMoney",
+    "name": "Daniel Money",
     "slug": "myMoney",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./src/mainlogo.png",
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./src/mainlogo.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
@@ -19,12 +19,18 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
+        "foregroundImage": "./src/iconvonzielmoney.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.vonzielniel.myMoney"
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./src/iconvonzielmoney.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "e6afdf61-16f7-485b-899a-78c4d9d7455f"
+      }
     }
   }
 }
